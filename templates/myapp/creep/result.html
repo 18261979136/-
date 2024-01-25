@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>creep</title>
+	{% load static %}
+</head>
+<body>
+	<center>
+		<h1>CREEP</h1>
+		<a href ="{% url 'indexcreep' %}">Creep Information</a>
+		<a href ="{% url 'addcreep' %}">Add Information</a>
+		<hr/>
+		<h3>Creep Fitting Information</h3>
+		<table width = "800" border = "1">
+			<tr>
+				<th>A</th>
+				<th>n</th>
+				<th>R2</th>
+				<th>RMSE</th>
+			</tr>
+			<tr>
+				<td>{{result.A|floatformat:"e"}}</td>
+				<td>{{result.n|floatformat:"e"}}</td>
+				<td>{{result.R2|floatformat:"e"}}</td>
+				<td>{{result.RMSE|floatformat:"e"}}</td>
+			</tr>
+		</table>
+		<img src = "{% static 'images/NB_curve.jpg' %}" alt = "Curve">
+	</center>
+</body>
+</html>

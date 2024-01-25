@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Creep Data</title>
+	</head>
+
+	<body>
+		<h1>Creep Data</h1>
+
+		<table>
+		  <tr>
+			<th>list1</th>
+			<th>list2</th>
+			<th>list3</th>
+		  </tr>
+		  {% for row in table_data %}
+			<tr>
+			  <td>{{ row.col1 }}</td>
+			  <td>{{ row.col2 }}</td>
+			  <td>{{ row.col3 }}</td>
+			</tr>
+		  {% endfor %}
+		</table>
+
+	</body>
+</html>

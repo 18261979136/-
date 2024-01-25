@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>users</title>
+	<script>
+		function doDel(uu){
+			if(confirm("ÄãÈ·¶¨ÒªÉ¾³ýÂð£¿")){
+				window.location = uu;
+			}
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<h1>USERS</h1>
+		<a href ="{% url 'indexusers' %}">User Information</a>
+		<a href = "{% url 'addusers' %}">Add Information</a>
+		<hr/>
+		<h3>User Information</h3>
+		<table width = "800" border = "1">
+			<tr>
+				<th>ID</th>
+				<th>name</th>
+				<th>age</th>
+				<th>phone</th>
+				<th>addtime</th>
+				<th>operation</th>
+			</tr>
+			{% for user in userslist %}
+				<tr>
+					<td>{{user.id}}</td>
+					<td>{{user.name}}</td>
+					<td>{{user.age}}</td>
+					<td>{{user.phone}}</td>
+					<td>{{user.addtime}}</td>
+					<td>
+						<a href = "{% url 'editusers' user.id %}">edit</a>
+						<a href = "javascript:doDel('{% url 'delusers' user.id %}')">delete</a></td>
+				</tr>
+			{% endfor %}
+		</table>
+
+	</center>
+</body>
+</html>

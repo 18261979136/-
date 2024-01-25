@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>users</title>
+</head>
+<body>
+	<center>
+		<h1>USERS</h1>
+		<a href ="{% url 'indexusers' %}">User Information</a>
+		<a href = "{% url 'addusers' %}">Add Information</a>
+		<hr/>
+		<h3>Operation Message</h3>
+		<h4>{{info}}</h4>
+		
+	</center>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<div class="header">
+		<form action="" method="">
+			<h1>请选择试验类型、温度、压力</h1>
+			<div class="form-box">
+				<input type="text" class="search-field style"
+				placeholder="style" name="style">
+
+				<input type="text" class="search-field business"
+				placeholder="stress" name="stress">
+
+				<input type="text" class="search-field location"
+				placeholder="temperature" name="temperature">
+
+				<button class="search-btn"
+				type= "submit"> Search</button>
+			</div>
+			</form>
+	</div>
+
+	<style type="text/css">
+		/*去除页边距*/
+		body {
+			margin: 0 ;
+			padding: 0;
+			}
+		/*背景图片格式*/
+		.header
+			{
+			height: 100vh;
+			background-image: linear-gradient(rgba(0,0,0,0.5) ,rgba(0,0,0,0.5)) ,url('image.jpg') ;
+			background-size: cover ;
+			background-position: center ;
+			display: flex ;
+			justify-content: center ;
+			align-items: center ;
+			font-family: sans-serif;
+			}
+		/*标题格式*/
+		h1 {
+			color: #fff ;
+			margin-bottom: 70px ;
+			font-size: 45px;
+			letter-spacing: 2px;
+			text-align: center;
+			}
+		/*输入框设置*/
+		.search-field {
+			height: 40px;
+			padding: 10px;
+			border: none ;
+			border-radius: 25px ;
+			outline: none ;
+			}
+
+		.style {
+			width: 200px;
+			}
+
+		.business {
+			width: 200px;
+			}
+
+		.location {
+			width: 200px;
+			}
+
+		.search-btn {
+			height: 60px;
+			width: 150px ;
+			background:#ffeb3b ;
+			border :none;
+			color :#000;
+			border-radius: 25px ;
+			}
+
+		.search-btn:hover {
+			background: #ffc107 ;
+			cursor: pointer ;
+			}
+	</style>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title>Test Data</title>
+	</head>
+	<body>
+		<table border = "2">
+			<caption>Test Report</caption>
+			{% for line in test_data %}
+			<tr>
+				{% for i in line %}
+					<td>{{ i }}</td>
+				{% endfor %}
+			</tr>
+			{% endfor %}
+		</table>
+
+		<form action = "{%url 'fitting' %}" method = "post">
+			{% csrf_token %}
+			<button type = "submit">Fitting</button>
+		</form>
+
+		<form action = "{%url 'display_test_data' %}" method = "post">
+			{% csrf_token %}
+			<button type = "submit">Sorted</button>
+		</form>
+	</body>
+</html>

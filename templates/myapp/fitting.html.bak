@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parameter Fitting Results</title>
+	{% load static %}
+</head>
+<body>
+    <h1>Parameter Fitting Results</h1>
+    <p>sigmaf is: {{ result.sigmaf }}</p>
+	<p>b is: {{ result.b }}</p>
+	<img scr = "{% static 'images/S-N_curve.jpg' %}" alt = "S-N Curve">
+</body>
+</html>

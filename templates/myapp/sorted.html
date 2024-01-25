@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title>Sort Data</title>
+	</head>
+	<body>
+		<table border="2">
+			<caption>Test Report</caption>
+			{% for line in test_data %}
+			<tr>
+				{% for i in line %}
+				<td>{{ i }}</td>
+				{% endfor %}
+			</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>

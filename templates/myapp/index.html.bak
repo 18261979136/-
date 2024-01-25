@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>MMSMART</h1>
+    <h2>数据驱动下的材料高温性能预测平台</h2>
+    <h3>欢迎访问！</h3>
+    <ul>
+        <li><a href="{% url 'shiyan' %}" target="_blank">试验部署</a></li>
+        <li><a href="{% url 'tezheng' %}" target="_blank">特征量分析</a></li>
+        <li><a href="{% url 'math' %}" target="_blank">算法优化</a></li>
+        <li><a href="{% url 'pingding' %}" target="_blank">评定模型</a></li>
+        <li><a href="{% url 'result' %}"target="_blank">结果评估</a></li>
+    </ul>
+</body>
+</html>

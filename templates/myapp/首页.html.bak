@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		{% load static %}
+		<title>MMSMART-数据驱动下的材料高温性能预测平台</title>
+		<!--设置各部分格式-->
+		<style type="text/css">
+			/*鼠标悬停变蓝*/
+			p:hover{
+				color:#2594ef;
+				font: size 2px;
+				}
+			/*兼容浏览器*/
+			/*将所有元素内外边距设置为0*/
+			*{
+				padding: 0;
+				margin: 0;
+				}
+			/*创建容器（页面顶端蓝色部分）从左到右存放子元素*/
+			.container1{
+				width: 100%;
+				height: 100px;
+				background-color: #2594ef!important;
+				display: flex;
+				flex-direction: row;
+				}
+			/*创建类选择器，使网页能够适应不同屏幕尺寸和显示设备*/
+			.content{
+				 width: 100%;
+				 height: 100%;
+				}
+			/*左列*/
+			.content-left{
+				width: 200px;
+				height: 600px;
+				background-color: white;
+				/*左浮动*/
+				float: left;
+				}
+			/*左侧标题栏，加蓝色框*/
+			.left-title{
+				height: 50px;
+				width: 200px;
+				border: 0.1px #2594ef solid;
+				}
+			/*设置左侧标题栏内容格式*/
+			.left-title>a{
+				display: block;
+				width: 100%;
+				height: 50px;
+				/*垂直居中*/
+				line-height: 50px;
+				/*水平居中*/
+				text-align: center;
+				/*字体颜色*/
+				color: black;
+				/*去掉a标签的默认下划线*/
+				text-decoration-line: none;
+				}
+			/*分隔线的样式*/
+			.seg{
+				height:0px;
+				width: 100%;
+				background-color: black;
+				}
+			.nav{
+				margin: 5px 0;
+				}
+			/*菜单项主标题*/
+			.nav-title{
+				height: 40px;
+				width: 100%;
+				color: black;
+				border: 0.1px #2594ef solid;
+				/*水平居中*/
+				text-align: center;
+				/*垂直居中*/
+				line-height: 40px;
+				/*鼠标滑过时显示手型*/
+				cursor: pointer;
+				}
+			/*子标题内容区*/
+			.nav-content{
+				width: 200px;
+				height: 100%;
+				background-color: tomato;
+				border: 0.1px #2594ef solid;
+				}
+			/*子标题鼠标未触碰效果*/
+			.nav-content>a{
+				display: block;
+				height: 30px;
+				width: 100%;
+				color: burlywood;
+				text-decoration: none;
+				border: 0.1px #2594ef solid;
+				text-align: center;
+				line-height: 30px;
+				font-size: 14px;
+				}
+			/*鼠标触碰效果*/
+			.nav-content>a:hover{
+				display: block;
+				height: 30px;
+				width: 100%;
+				color: cornflowerblue;
+				text-decoration: none;
+				text-align: center;
+				line-height: 30px;
+				background-color: darkolivegreen;
+				}
+		</style>
+
+
+		<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+		<script type="text/javascript">
+			$(function () {
+				//隐藏子标题区
+				$(".nav-menu").each(function () {
+					$(this).children(".nav-content").hide();
+				});
+
+				//给主标题添加单击事件
+				$(".nav-title").each(function () {
+					$(this).click(function() {
+						var navEle = $(this).parents(".nav-menu").children(".nav-content");
+						if(navEle.css("display")!="none"){
+							navEle.slideUp();
+						}
+						else{
+							navEle.slideDown();
+						}
+					});
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+
+		<div class="content">
+			<div class="container1">
+				<span class="c-logo noselect">
+						<img src="{% static 'images/test.png' %}" width="150" height="100">
+				</span>
+				<h1 class="c-site-title pc">
+					<a href="http://47.122.3.124/" >MMSMART-数据驱动下的材料高温性能预测平台</a>
+				</h1>
+			</div>
+		</div>
+
+
+		<div class="content-left">
+			<div class="left-title">
+				<a href="http://47.122.3.124/"><p>首页</p></a>
+			</div>
+
+			<!--分隔-->
+			<div class="seg"></div>
+			<!--菜单导航栏-->
+			<div class="nav"></div>
+
+			<!--每一个菜单项-->
+			<div class="nav-menu">
+				<!--主标题-->
+				<div class="nav-title"><p>数据库</p></div>
+				<!--子标题-->
+				<div class="nav-content">
+					<a href="{% url 'get_test1' %}" target="_blank">get_test1</a>
+					<a href="{% url 'get_test2' %}" target="_blank">get_test2</a>
+					<a href="{% url 'indexusers' %}" target="_blank">用户信息</a>
+				</div>
+			</div>
+
+
+			<!--每一个菜单项-->
+			<div class="nav-menu">
+				<!--主标题-->
+				<div class="nav-title"><p>算法建模</p></div>
+				<!--子标题-->
+				<div class="nav-content">
+					<a href="{% url 'math' %}" target="_blank">算法优化</a>
+					<a href="网站"><p>1</p></a>
+					<a href="网站"><p>2</p></a>
+				</div>
+			</div>
+
+			<!--每一个菜单项-->
+			<div class="nav-menu">
+				<!--主标题-->
+				<div class="nav-title"><p>基础理论</p></div>
+				<!--子标题-->
+				<div class="nav-content">
+					<a href="网站"><p>1</p></a>
+					<a href="网站"><p>2</p></a>
+				</div>
+			</div>
+
+			<!--每一个菜单项-->
+			<div class="nav-menu">
+				<!--主标题-->
+				<div class="nav-title"><p>可视化调参</p></div>
+				<!--子标题-->
+				<div class="nav-content">
+					<a href="网站"><p>1</p></a>
+					<a href="网站"><p>2</p></a>
+				</div>
+			</div>
+
+			<!--每一个菜单项-->
+			<div class="nav-menu">
+				<!--主标题-->
+				<div class="nav-title"><p>结果</p></div>
+				<!--子标题-->
+				<div class="nav-content">
+					<a href="网站"><p>1</p></a>
+					<a href="网站"><p>2</p></a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

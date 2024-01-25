@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>creep</title>
+</head>
+<body>
+	<center>
+		<h1>CREEP</h1>
+		<a href ="{% url 'indexcreep' %}">Creep Information</a>
+		<a href = "{% url 'addcreep' %}">Add Information</a>
+		<hr/>
+		<h3>Edit Information</h3>
+		<form action = "{% url 'updatecreep' %}" method = "post">
+			{% csrf_token %}
+			<input type = "hidden" name = "id" value = "{{creep.id}}"/>
+			<table width = "280" border = "0">
+				<tr>
+					<td>temperature:</td>
+					<td><input type = "text" name = "temperature" value = "{{creep.temperature}}"/></td>
+				</tr>
+				<tr>
+					<td>stress:</td>
+					<td><input type = "text" name = "stress" value = "{{creep.temperature}}"/></td>
+				</tr>
+				<tr>
+					<td>speed:</td>
+					<td><input type = "text" name = "speed" value = "{{creep.speed}}"/></td>
+				</tr>
+				<tr>
+					<td colspan = "2" align = "center">
+						<input type = "submit" value = "edit"/>
+						<input type = "reset" value = "reset"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</center>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<title>creep</title>
+	<script src="{% static 'js/file.js' %}"></script>
+</head>
+<body>
+	<center>
+		<h1>CREEP</h1>
+		<a href ="{% url 'indexcreep' %}">Creep Information</a>
+		<a href ="{% url 'addcreep' %}">Add Information</a>
+		<hr/>
+		<h3>Creep Information</h3>
+		<table width = "800" border = "1">
+			<tr>
+				<th>ID</th>
+				<th>temperature</th>
+				<th>stress</th>
+				<th>speed</th>
+				<th>edittime</th>
+				<th>operation</th>
+			</tr>
+			{% for creep in creeplist %}
+				<tr>
+					<td>{{creep.id}}</td>
+					<td>{{creep.temperature}}</td>
+					<td>{{creep.stress}}</td>
+					<td>{{creep.speed}}</td>
+					<td>{{creep.addtime}}</td>
+					<td>
+						<a href = "{% url 'editcreep' creep.id %}">edit</a>
+						<a href="javascript:void(0);" onclick="confirmDelete('{% url 'delcreep' creep.id %}')">delete</a></td>
+				</tr>
+			{% endfor %}
+		</table>
+		<form action = "{%url 'fitcreep' %}" method = "post">
+			{% csrf_token %}
+			<button type = "submit">Fitting</button>
+		</form>
+	</center>
+</body>
+</html>
